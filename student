@@ -1,0 +1,59 @@
+name (string)
+age (int)
+grade(char)
+provide 2 consytructors:
+1: initializes only the name and sets default nvalues for age eg:18 and grade eg:A
+2: initializes all the fields(name,age, and grade)
+implement following methods:
+displayInfo() - print details of the student
+updateGrade(char newGrade) - update strudent's grade
+isAdult()-return true if thhe student is 18 bor older;otherwise,false 
+'////////////////////////////////////////////////////////////////////////////////////////////////////
+public class Student {
+    private String name;
+    private int age;
+    private char grade;
+
+    // Constructor 1: initializes only name, default age=18, grade='A'
+    public Student(String name) {
+        this.name = name;
+        this.age = 18;
+        this.grade = 'A';
+    }
+
+    // Constructor 2: initializes all fields
+    public Student(String name, int age, char grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    // Method to display student info
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Grade: " + grade);
+    }
+
+    // Method to update grade
+    public void updateGrade(char newGrade) {
+        this.grade = newGrade;
+    }
+
+    // Method to check if student is adult
+    public boolean isAdult() {
+        return age >= 18;
+    }
+
+    // Testing the class
+    public static void main(String[] args) {
+        Student s1 = new Student("Alice");
+        s1.displayInfo();
+        System.out.println("Is adult? " + (s1.isAdult() ? "Yes" : "No"));
+
+        Student s2 = new Student("Bob", 16, 'B');
+        s2.displayInfo();
+        System.out.println("Is adult? " + (s2.isAdult() ? "Yes" : "No"));
+
+        s2.updateGrade('A');
+        s2.displayInfo();
+    }
+}
