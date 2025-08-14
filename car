@@ -17,7 +17,8 @@ public class Car{
     }
     void discount(){
         float dis = price * 25 / 100;
-        System.out.printf("Discount : %.2f", dis);
+        price -= dis;
+        System.out.printf("After Discount : %.2f", price);
     }
     
     public static void main(String[] args) {
