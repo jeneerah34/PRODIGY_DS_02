@@ -1,0 +1,14 @@
+import java.util.*;
+public class unboxingexp{
+    public static void main(String[] args){
+        int number = 20;
+        Integer wrapper = number;
+        System.out.println("Primitive number: " +number);
+        System.out.println("Wrapper object: " +wrapper);
+        Integer anotherWrapper = new Integer(30);
+        int anotherPrimitive = anotherWrapper;
+        System.out.println("Wrapper object: " +anotherWrapper);
+        System.out.println("Primitive number: " +anotherPrimitive);
+        
+    }
+}
