@@ -1,0 +1,27 @@
+import java.util.*;
+public class Library{
+    String book;
+    
+    Library(String book){
+        this.book = book;
+    }
+    
+    void issue(String bk){
+        System.out.println(bk+ " Issued");
+    }
+    void returnbook(String rbook){
+        System.out.println(rbook + " Returned");
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What book do you want ?");
+        String bk = sc.nextLine();
+        System.out.println("What book do you want to return ?");
+        String rbk = sc.nextLine();
+        Library lb = new Library(bk);
+        lb.issue(bk);
+        lb.returnbook(rbk);
+ 
+    }
+}
