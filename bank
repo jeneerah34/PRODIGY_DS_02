@@ -1,0 +1,70 @@
+create a class  bankacc with:
+constructor to iniialize name and balance and acc number
+switch case for 1:wwithdraw
+irukura balanmce vida kami
+2:deposuit
+3:show bal
+4:exit
+//////////////////////////////////////////
+import java.util.*;
+public class Bank{
+    String name;
+    long accno;
+    float bal;
+    Bank(String name,long accno,float bal){
+        this.name = name;
+        this.accno = accno;
+        this.bal = bal;
+    }
+    void disp(){
+        System.out.println("Name: " + name);
+        System.out.println("Account Number: "+accno);
+        System.out.println("Balance: "+bal);
+    }
+    void cal(){
+        Scanner sc = new Scanner(System.in);
+        int ch=0;
+        while(ch<4){
+            System.out.println("Enter 1 -> withdraw\nEnter 2 -> deposit\nEnter 3 -> show balance\nEnter 4 ->Exit");
+            ch = sc.nextInt();
+            switch(ch){
+                case 1:
+                    System.out.println("Amount to be withdrawn: ");
+                    int with = sc.nextInt();
+                    if(bal<=0){
+                        System.out.println("Insufficient balance!");
+                    } else{
+                        bal -= with;
+                    }
+                    //System.out.println("After withdraw: " + bal);
+                    break;
+                case 2:
+                    System.out.println("Amount to deposit: ");
+                    int dep = sc.nextInt();
+                    bal += dep;
+                    //System.out.println("After deposit: " + bal);
+                    break;
+                case 3:
+                    System.out.println("Available Balance: " + bal);
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Invalid input");
+            }
+        }
+        
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String n = sc.nextLine();
+        long acNo = sc.nextLong();
+        float bal  = sc.nextFloat();
+        
+        Bank obj = new Bank(n,acNo,bal);
+        obj.disp();
+        obj.cal();
+ 
+    }
+}
