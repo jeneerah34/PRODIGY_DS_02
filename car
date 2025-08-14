@@ -1,0 +1,31 @@
+///create a class car with:
+a constructorn that sets model and price
+a method to display dsetails
+a method to apply discount on price
+///
+import java.util.*;
+public class Car{
+    String model;
+    float price;
+    Car(String model,float price){
+        this.model = model;
+        this.price = price;
+    }
+    void display(){
+        System.out.println("Model: " + model);
+        System.out.println("Price: " + price);
+    }
+    void discount(){
+        float dis = price * 25 / 100;
+        System.out.printf("Discount : %.2f", dis);
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String mod = sc.nextLine();
+        float p = sc.nextFloat();
+        Car obj = new Car(mod,p);
+        obj.display();
+        obj.discount();
+    }
+}
